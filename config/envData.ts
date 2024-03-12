@@ -8,4 +8,4 @@ export default {
     GRAPHQL_ENDPOINT: 'https://countries.trevorblades.com/',
     ENDPOINT: 'https://people-api-gateway.dev.us.net/graphql',
   },
-}
+};

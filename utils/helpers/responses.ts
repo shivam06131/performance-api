@@ -1,5 +1,5 @@
-import { Message, ResponseMessage } from '../types/genericTypes'
-import { Response } from 'express'
+import { Message, ResponseMessage } from '../types/genericTypes';
+import { Response } from 'express';
 
 const serverResponse = {
   sendSuccess: (res: Response, message: Message, data = null) => {
@@ -7,20 +7,20 @@ const serverResponse = {
       code: message.code ? message.code : 500,
       success: message.success,
       message: message.message,
-    }
+    };
     if (data) {
-      responseMessage.data = data
+      responseMessage.data = data;
     }
-    return res.status(message.code).json(responseMessage)
+    return res.status(message.code).json(responseMessage);
   },
   sendError: (res: Response, error) => {
     const responseMessage: ResponseMessage = {
       code: error.code ? error.code : 500,
       success: false,
       message: error.message,
-    }
-    return res.status(error.code ? error.code : 500).json(responseMessage)
+    };
+    return res.status(error.code ? error.code : 500).json(responseMessage);
   },
-}
+};
 
-export default serverResponse
+export default serverResponse;

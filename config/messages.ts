@@ -39,6 +39,6 @@ const defaultMessageConfig = {
     message: 'Required parameter missing',
     success: false,
   },
-}
+};
 
-export default defaultMessageConfig
+export default defaultMessageConfig;
