@@ -1,7 +1,7 @@
 import express from 'express';
 import serverResponses from '../utils/helpers/responses';
 import messages from '../config/messages';
-import { evaluateApiPerformance } from '../utils/helpers/graphqlRouteHelper';
+import { evaluateApiPerformance } from '../api/performanceAPIHelper';
 import { Request, Response } from 'express';
 import logger from '../utils/helpers/logger';
 import { checkAuthMiddleware } from '../middleware/auth';

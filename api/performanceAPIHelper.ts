@@ -1,17 +1,9 @@
 import axios from 'axios';
-import { PerformaceData } from '../types/genericTypes';
+import { PerformanceData } from '../utils/types/genericTypes';
 import { performance } from 'perf_hooks';
-import logger from './logger';
+import logger from '../utils/helpers/logger';
 
-// axios.request(config)
-// .then((response) => {
-//   console.log(JSON.stringify(response.data));
-// })
-// .catch((error) => {
-//   console.log(error);
-// });
-
-export const evaluateApiPerformance = async (virtualUsers: number, graphqlQuery: string): Promise<PerformaceData> => {
+export const evaluateApiPerformance = async (virtualUsers: number, graphqlQuery: string): Promise<PerformanceData> => {
   try {
     logger.info(`evaluateApiPerformance started.`);
     const responseTimes: number[] = [];
@@ -68,7 +60,7 @@ export const evaluateApiPerformance = async (virtualUsers: number, graphqlQuery:
       minTime: Number(minTime.toFixed(2)),
       maxTime: Number(maxTime.toFixed(2)),
       requestPerSecond: Number(requestPerSecond.toFixed(2)),
-      totoalVirtualUsers: virtualUsers,
+      totalVirtualUsers: virtualUsers,
       ninetyPercentile: Number(ninetyPercentile.toFixed(2)),
       ninetyFifthPercentile: Number(ninetyFifthPercentile.toFixed(2)),
       totalTimeTaken: Number(globalTotalTimeTaken.toFixed(2)),

@@ -1,9 +1,9 @@
-export interface PerformaceData {
+export interface PerformanceData {
   averageTime: number;
   minTime: number;
   maxTime: number;
   requestPerSecond: number;
-  totoalVirtualUsers: number;
+  totalVirtualUsers: number;
   ninetyPercentile: number;
   ninetyFifthPercentile: number;
   totalTimeTaken: number;
