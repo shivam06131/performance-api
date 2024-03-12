@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  backend:
+    restart: always
+    build:
+      context: .
+      target: development # Make sure your Dockerfile has a development stage.
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - '3344:3344'
