@@ -16,7 +16,7 @@ export interface Message {
 }
 
 export interface ResponseMessage extends Message {
-  data?: any
+  data?: unknown
 }
 
 export interface Error {

@@ -2,7 +2,7 @@ import { Message, ResponseMessage } from '../types/genericTypes'
 import { Response } from 'express'
 
 const serverResponse = {
-  sendSuccess: (res: Response, message: Message, data: any = null) => {
+  sendSuccess: (res: Response, message: Message, data = null) => {
     const responseMessage: ResponseMessage = {
       code: message.code ? message.code : 500,
       success: message.success,

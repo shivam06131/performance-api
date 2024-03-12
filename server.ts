@@ -1,11 +1,12 @@
 import express from 'express'
 import path from 'path'
 import cookieParser from 'cookie-parser'
-const bodyParser = require('body-parser')
-const cors = require('cors')
-require('./config/config')
+import bodyParser from 'body-parser'
+import cors from 'cors'
+import dotenv from 'dotenv'
 import routes from './routes'
-require('dotenv').config()
+dotenv.config()
+require('./config/config')
 
 const app = express()
 

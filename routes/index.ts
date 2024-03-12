@@ -14,7 +14,7 @@ const routes = (app) => {
       logger.info(`Request received at /graphql : ${JSON.stringify({ graphqlQuery, virtualUsers })}`)
       const result = await evaluateApiPerformance(virtualUsers, graphqlQuery)
       serverResponses.sendSuccess(res, messages.SUCCESSFUL, result)
-    } catch (error: any) {
+    } catch (error: unknown) {
       serverResponses.sendError(res, messages.BAD_REQUEST)
     }
   })

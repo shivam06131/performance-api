@@ -16,10 +16,10 @@ export const evaluateApiPerformance = async (virtualUsers: number, graphqlQuery:
     logger.info(`evaluateApiPerformance started.`)
     const responseTimes: number[] = []
 
-    let globalStart: number = performance.now()
+    const globalStart: number = performance.now()
     for (let i = 0; i < virtualUsers; i++) {
       const start: number = performance.now()
-      let config = {
+      const config = {
         method: 'post',
         maxBodyLength: Infinity,
         url: process.env.GRAPHQL_ENDPOINT,
@@ -41,8 +41,8 @@ export const evaluateApiPerformance = async (virtualUsers: number, graphqlQuery:
       const responseTime: number = end - start
       responseTimes.push(responseTime)
     }
-    let globalEnd: number = performance.now()
-    let globalTotalTimeTaken: number = globalEnd - globalStart
+    const globalEnd: number = performance.now()
+    const globalTotalTimeTaken: number = globalEnd - globalStart
     const sortedResponseTimes: number[] = responseTimes.sort((a, b) => a - b)
 
     // Calculate Average, Min & Max time.
