@@ -24,13 +24,12 @@ export const evaluateApiPerformance = async (virtualUsers: number, graphqlQuery:
         maxBodyLength: Infinity,
         url: process.env.GRAPHQL_ENDPOINT,
         headers: {
-          // 'WM_CONSUMER.ID': '',
-          // 'WM_SVC.NAME': 'PEOPLE-API-GATEWAY',
-          // 'WM_SVC.ENV': 'stg:1.0.0',
-          // 'WM_SEC.KEY_VERSION': '1',
-          // 'Content-Type': 'application/json',
-          // 'WM_CONSUMER.INTIMESTAMP': '',
-          // 'REQUEST_SOURCE': 'API_PROXY'
+          // 'WM_CONSUMER.ID': process.env.WM_CONSUMER_ID,
+          // 'WM_SVC.NAME': process.env.WM_SVC_NAME,
+          // 'WM_SVC.ENV': process.env.WM_SVC_ENV,
+          // 'WM_SEC.KEY_VERSION': process.env.WM_SEC_KEY_VERSION,
+          // 'WM_CONSUMER.INTIMESTAMP': process.env.WM_CONSUMER_INTIMESTAMP,
+          // 'REQUEST_SOURCE': process.env.REQUEST_SOURCE
         },
       };
 

@@ -4,11 +4,12 @@ import messages from '../config/messages';
 import { evaluateApiPerformance } from '../utils/helpers/graphqlRouteHelper';
 import { Request, Response } from 'express';
 import logger from '../utils/helpers/logger';
+import { checkAuthMiddleware } from '../middleware/auth';
 
 const routes = (app) => {
   const router = express.Router();
 
-  router.post('/graphql', async (req: Request, res: Response) => {
+  router.post('/graphql', checkAuthMiddleware, async (req: Request, res: Response) => {
     try {
       const { graphqlQuery, virtualUsers } = req.body;
       logger.info(`Request received at /graphql : ${JSON.stringify({ graphqlQuery, virtualUsers })}`);
